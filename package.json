@@ -40,8 +40,13 @@
   },
   "main": "main.js",
   "scripts": {
-    "build": "echo \"No script specified\"",
-    "start": "echo \"No script specified\"",
+    "build": "cross-env NODE_ENV=production parcel build src/index.html --no-minify --public-url /",
+    "package:all": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=all --icon=src/assets/tabata-timer-icon",
+    "package:linux": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=linux --icon=src/assets/tabata-timer-icon",
+    "package:macappstore": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=mas --icon=src/assets/tabata-timer-icon",
+    "package:osx": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=darwin --icon=src/assets/tabata-timer-icon",
+    "package:win": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=win32 --icon=src/assets/tabata-timer-icon",
+    "start": "parcel ./src/index.html -p 1337",
     "test": "echo \"No script specified\""
   },
   "dependencies": {
@@ -53,6 +58,7 @@
     "babel-preset-react": "^6.24.1",
     "electron": "^3.0.0-beta.1",
     "electron-packager": "^12.1.0",
+    "parcel-bundler": "^1.9.4",
     "styled-components": "^3.3.3"
   }
 }
