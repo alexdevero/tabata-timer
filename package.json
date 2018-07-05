@@ -1,0 +1,49 @@
+{
+  "name": "tabata-timer",
+  "version": "0.0.1",
+  "description": "Tabata timer app built with electron.",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdevero/tabata-timer.git"
+  },
+  "homepage": "https://github.com/alexdevero/tabata-timer#readme",
+  "bugs": {
+    "url": "https://github.com/alexdevero/tabata-timer/issues"
+  },
+  "author": {
+    "name": "Alex Devero",
+    "url": "https://alexdevero.com/"
+  },
+  "contributors": [
+    {
+      "name": "",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "keywords": [
+    "app",
+    "electron",
+    "fitness",
+    "open",
+    "open-source",
+    "source",
+    "tabata",
+    "timer"
+  ],
+  "engines": {
+    "node": ">=10.0",
+    "npm": ">=6.0",
+    "yarn": ">=1.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "echo \"No script specified\"",
+    "start": "echo \"No script specified\"",
+    "test": "echo \"No script specified\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
