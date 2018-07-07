@@ -1,17 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 
-import './styles/styles.css'
+import App from './components/app'
 
-const App = () => (
-  <div className="app">
-    <h1 className="app__title">Welcome!</h1>
-  </div>
-)
+// Since we are using HtmlWebpackPlugin WITHOUT a template, we should create our own root node in the body element before rendering into it
+let root = document.createElement('div')
 
-ReactDOM.render(<App />, document.getElementById('root'))
+root.id = 'root'
+document.body.appendChild(root)
 
-// Hot Module Replacement
-if (module.hot) {
-  module.hot.accept()
-}
+// Now we can render our application into it
+render(<App />, document.getElementById('root'))
