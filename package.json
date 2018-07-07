@@ -40,13 +40,11 @@
   },
   "main": "main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production parcel build src/index.html --no-minify --public-url /",
-    "package:all": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=all --icon=src/assets/tabata-timer-icon",
-    "package:linux": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=linux --icon=src/assets/tabata-timer-icon",
-    "package:macappstore": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=mas --icon=src/assets/tabata-timer-icon",
-    "package:osx": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=darwin --icon=src/assets/tabata-timer-icon",
-    "package:win": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=win32 --icon=src/assets/tabata-timer-icon",
-    "start": "parcel ./src/index.html -p 1337",
+    "build": "webpack --config webpack.build.config.js --mode production",
+    "prod": "webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
+    "start": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
+    "package": "npm run build",
+    "postpackage": "electron-packager ./ --out=./builds",
     "test": "echo \"No script specified\""
   },
   "dependencies": {
@@ -55,10 +53,23 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
     "electron": "^3.0.0-beta.1",
     "electron-packager": "^12.1.0",
-    "parcel-bundler": "^1.9.4",
-    "styled-components": "^3.3.3"
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-nesting": "^6.0.0",
+    "postcss-preset-env": "^5.2.1",
+    "postcss-pxtorem": "^4.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   }
 }
