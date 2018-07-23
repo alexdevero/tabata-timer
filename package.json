@@ -45,7 +45,9 @@
     "start": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
     "package": "npm run build",
     "postpackage": "electron-packager ./ --out=./builds",
-    "test": "echo \"No script specified\""
+    "test": "echo \"No script specified\"",
+    "package:win": "cross-env NODE_ENV=prod electron-packager ./beta/ --out=./builds --overwrite --platform=win32 --icon=assets/instagram-uploader-icon",
+    "start:beta": "cross-env NODE_ENV=dev electron ./beta/app.js"
   },
   "dependencies": {
     "react": "^16.4.1",
