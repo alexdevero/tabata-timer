@@ -40,6 +40,8 @@ app.once('ready', () => {
   window.webContents.on('did-finish-load', function() {
     window.webContents.insertCSS('.section-heavyset.feature { display: none !important;}')
 
+    window.webContents.insertCSS('.col-sm-12 .lead:first-of-type { display: none !important;}')
+
     window.webContents.insertCSS('.section-padded-bottom.footer { display: none !important;}')
 
     window.webContents.insertCSS('.section-padded-bottom.timer-info .col-md-4 { display: none !important;}')
