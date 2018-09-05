@@ -38,16 +38,17 @@
     "npm": ">=6.0",
     "yarn": ">=1.0"
   },
-  "main": "app.js",
+  "main": "src/main.js",
   "scripts": {
     "build": "webpack --config webpack.build.config.js --mode production",
-    "prod": "webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
+    "prod": "webpack --mode production --config=./webpack.build.config.js && electron --noDevServer .",
     "start": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
     "package": "npm run build",
     "postpackage": "electron-packager ./ --out=./builds",
     "test": "echo \"No script specified\"",
+    "package:beta": "cross-env NODE_ENV=prod electron-packager ./beta --out=./builds-beta --overwrite --platform=win32",
     "package:win": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=win32",
-    "start:beta": "cross-env NODE_ENV=dev electron ./app.js"
+    "start:beta": "cross-env NODE_ENV=dev electron ./beta/app.js"
   },
   "dependencies": {
     "react": "^16.4.2",
