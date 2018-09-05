@@ -2,7 +2,9 @@
 #################################
 .cache/
 .tmp/
+.vscode/
 builds/
+builds-beta/
 dist/
 node_modules/
 
