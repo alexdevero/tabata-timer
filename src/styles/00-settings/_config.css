@@ -1,0 +1,7 @@
+/* Config */
+:root {
+  --spacer: 4px;
+  --color-blue: hsl(209.6, 100%, 55.9%);
+  --color-gray: hsl(212.4, 16.7%, 82.5%);
+  --color-red: hsl(354.8, 100%, 63.9%);
+}
