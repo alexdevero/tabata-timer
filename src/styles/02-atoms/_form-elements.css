@@ -26,3 +26,11 @@ select {
 input + select {
   margin-top: calc(var(--spacer) * 3);
 }
+
+label {
+  font-size: 14px;
+
+  & + input {
+    margin-top: calc(var(--spacer));
+  }
+}
