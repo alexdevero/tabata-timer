@@ -1,9 +1,0 @@
-/* Settings */
-@import '00-settings/_config.css';
-
-/* Base */
-@import '01-base/_base.css';
-@import '01-base/_typography.css';
-
-/* Atoms */
-@import '02-atoms/_form-elements.css';
