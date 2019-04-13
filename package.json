@@ -1,79 +1,97 @@
 {
   "name": "tabata-timer",
-  "version": "0.0.1",
-  "description": "Tabata timer app built with electron.",
+  "version": "0.1.0",
   "license": "MIT",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alexdevero/tabata-timer.git"
-  },
-  "homepage": "https://github.com/alexdevero/tabata-timer#readme",
-  "bugs": {
-    "url": "https://github.com/alexdevero/tabata-timer/issues"
-  },
-  "author": {
-    "name": "Alex Devero",
-    "url": "https://alexdevero.com/"
-  },
-  "contributors": [
-    {
-      "name": "",
-      "email": "",
-      "url": ""
-    }
+  "homepage": "./",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
-  "keywords": [
-    "app",
-    "electron",
-    "fitness",
-    "open",
-    "open-source",
-    "source",
-    "tabata",
-    "timer"
-  ],
-  "engines": {
-    "node": ">=10.0",
-    "npm": ">=6.0",
-    "yarn": ">=1.0"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "main": "src/main.js",
+  "build": {
+		"appId": "com.your-domain",
+		"compression": "normal",
+		"productName": "Example",
+		"directories": {
+			"buildResources": "build",
+			"output": "dist"
+		},
+		"mac": {
+			"icon": "assets/icon.icns",
+			"type": "distribution",
+			"target": [
+				"pkg",
+				"dmg",
+				"mas"
+			],
+			"publish": {
+				"provider": "s3",
+				"bucket": "example-releases",
+				"path": "releases"
+			},
+			"category": "public.app-category.news"
+		},
+		"mas": {
+			"entitlements": "assets/entitlements.mas.plist",
+			"entitlementsInherit": "assets/entitlements.mas.inherit.plist",
+			"provisioningProfile": "assets/embedded.provisionprofile"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "assets/icon.ico",
+			"publish": {
+				"provider": "s3",
+				"bucket": "example-releases",
+				"path": "releases"
+			}
+		},
+		"linux": {
+			"icon": "assets/icon.png",
+			"target": [
+				"snap",
+				"AppImage"
+			],
+			"description": "Example",
+			"category": "Network;Feed",
+			"publish": {
+				"provider": "s3",
+				"bucket": "example-releases",
+				"path": "releases"
+			}
+		}
+	},
+  "main": "public/electron.js",
   "scripts": {
-    "build": "webpack --config webpack.build.config.js --mode production",
-    "prod": "webpack --mode production --config=./webpack.build.config.js && electron --noDevServer .",
-    "start": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
-    "package": "npm run build",
-    "postpackage": "electron-packager ./ --out=./builds",
-    "test": "echo \"No script specified\"",
-    "package:beta": "cross-env NODE_ENV=prod electron-packager ./beta --out=./builds-beta --overwrite --platform=win32",
-    "package:win": "cross-env NODE_ENV=prod electron-packager ./ --out=./builds --overwrite --platform=win32",
-    "start:beta": "cross-env NODE_ENV=dev electron ./beta/app.js"
+    "dev": "yarn react-scripts start",
+		"build": "react-scripts build",
+		"start": "concurrently --kill-others \"cross-env BROWSER=none yarn react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
+		"pack": "electron-builder --dir",
+		"dist": "npx build --x64 --macos --win --linux --c.extraMetadata.main=build/electron.js -p always"
   },
   "dependencies": {
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "electron-devtools-installer": "2.2.4",
+    "electron-is-dev": "^1.1.0",
+    "electron-publisher-s3": "^20.17.2",
+    "react": "^16.8.6",
+    "react-dev-utils": "^8.0.0",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.2",
-    "cross-env": "^5.2.0",
-    "css-loader": "^1.0.0",
-    "electron": "^3.0.0-beta.8",
-    "electron-packager": "^12.1.1",
-    "file-loader": "^2.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.2",
-    "postcss-import": "^12.0.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-nesting": "^6.0.0",
-    "postcss-preset-env": "^5.3.0",
-    "postcss-pxtorem": "^4.0.1",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.17.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.4",
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.4",
+    "concurrently": "^4.1.0",
+		"cross-env": "^5.2.0",
+    "electron": "^4.1.4",
+		"electron-builder": "^20.39.0",
+    "react-scripts": "2.1.8",
+    "typescript": "3.4.3",
+		"version-bump-prompt": "^5.0.1",
+    "wait-on": "3.2.0"
   }
 }
