@@ -25,7 +25,6 @@ createWindow = () => {
 	)
 
 	if (isDev) {
-    console.log('isdev')
 		const {
 			default: installExtension,
 			REACT_DEVELOPER_TOOLS
