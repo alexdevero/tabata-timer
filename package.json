@@ -80,7 +80,7 @@
 	},
 	"devDependencies": {
 		"@types/jest": "29.0.3",
-		"@types/node": "11.13.4",
+		"@types/node": "18.7.23",
 		"@types/react": "18.0.21",
 		"@types/react-dom": "16.8.4",
 		"concurrently": "^7.4.0",
