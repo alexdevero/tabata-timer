@@ -2182,15 +2182,15 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@*", "@types/node@18.11.17":
+"@types/node@*", "@types/node@^18.11.18":
+  version "18.16.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.5.tgz#bf64e42719dc2e74da24709a2e1c0b50a966120a"
+  integrity sha512-seOA34WMo9KB+UA78qaJoCO20RJzZGVXQ5Sh6FWu0g/hfT44nKXnej3/tCQl7FL97idFpBhisLYCTB50S0EirA==
+
+"@types/node@18.11.17":
   version "18.11.17"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.17.tgz#5c009e1d9c38f4a2a9d45c0b0c493fe6cdb4bcb5"
   integrity sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==
-
-"@types/node@^16.11.26":
-  version "16.11.66"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.66.tgz#97f6891c3b8770e21163b93918d57fd1b799e235"
-  integrity sha512-+xvMrGl3eAygKcf5jm+4zA4tbfEgmKM9o6/glTmN0RFVdu2VuFXMYYtRmuv3zTGCgAYMnEZLde3B7BTp+Yxcig==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -4641,13 +4641,13 @@ electron-to-chromium@^1.4.251:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.260.tgz#9aa3348d037686b47ccc5d3b48fe417b1f20017a"
   integrity sha512-1GxPM2Bdz1AjuNjho9/TqJfxM7KZ7R8s4vA5cbbIoVacQXfvZlV+d7Y1lu4BhGzEBfjjhakr3NXKqN0PxPXIsg==
 
-electron@^22.0.1:
-  version "22.0.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-22.0.1.tgz#32a8533848e41f07e53f6feb0656207da57d8707"
-  integrity sha512-05X/UmQOtUYwFmytY4/rc+4Iz+LYzHhftRZDkx1GQzyX/BxopStddG8LMcx3SESNk25F2J93oHv1Lzs6QWeCjA==
+electron@^24.2.0:
+  version "24.2.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-24.2.0.tgz#54623a909e2e5d53a69d5fd8bf22ab37e61c188b"
+  integrity sha512-fEYAftYqFhveniWJbEHXjNMWjooFFIuqNj/eEFJkGzycInfBJq/c4E/dew++s6s0YLubxFnjoF2qZiqapLj0gA==
   dependencies:
     "@electron/get" "^2.0.0"
-    "@types/node" "^16.11.26"
+    "@types/node" "^18.11.18"
     extract-zip "^2.0.1"
 
 emittery@^0.10.2:
