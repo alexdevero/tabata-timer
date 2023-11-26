@@ -89,7 +89,7 @@
 		"electron-builder": "^24.4.0",
 		"electron-devtools-installer": "3.2.0",
 		"electron-publisher-s3": "^20.17.2",
-		"node-sass": "^8.0.0",
+		"node-sass": "^9.0.0",
 		"react-dev-utils": "^12.0.1",
 		"react-scripts": "5.0.1",
 		"typescript": "5.3.2",
